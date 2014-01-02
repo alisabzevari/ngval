@@ -1,0 +1,39 @@
+﻿@using NgVal;
+@model NgVal.Tests.Models.TestEntity
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div ng-app="App" ng-controller="Ctrl">
+        <form name="testForm" novalidate ng-submit="submit()">
+            <input type="text" name="username" ng-model="user.name" @Html.NgValFor(u => u.RequiredProperty) />
+            {{testForm.username.ngval.hasError}}
+            <div ng-repeat="err in testForm.username.ngval.errors">
+                <span>{{err.message}}</span>
+                <br />
+            </div>
+            <input type="submit" />
+        </form>
+    </div>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/ngval.js"></script>
+    <script>
+        var App = angular.module('App', ['ngval']);
+        App.controller('Ctrl', function ($scope) {
+            $scope.user = {};
+            $scope.submit = function () {
+                //$scope.errors = $scope.testForm.username.ngval.getAllErrors();
+                var a = $scope.testForm.username;
+            };
+        });
+    </script>
+</body>
+</html>
