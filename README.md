@@ -3,7 +3,7 @@ ngval
 
 ASP.NET MVC validation for AngularJS.
 ## Getting Started
-1. Add data anotations to your entities
+1.Add data anotations to your entities
 
 ```c#
 public class TestEntity
@@ -19,19 +19,19 @@ public class TestEntity
     public string MultipleValidationProperty { get; set; }
 }
 ```
-2. Reference ngval.js to your page
+2.Reference ngval.js to your page
 
 ```html
 <script src="~/Scripts/ngval.js"></script>
 ```
 
-3. Add ngval module to your app module dependencies
+3.Add ngval module to your app module dependencies
 
 ```javascript
 var App = angular.module('App', ['ngval']);
 ```
 
-4. Use NgValFor Html helper method to insert angularjs directives for validation. It will also add native angularjs directives. And you can use ngval object for error messages and more.
+4.Use NgValFor Html helper method to insert angularjs directives for validation. It will also add native angularjs directives. And you can use ngval object for error messages and more.
 
 ```html
 <form name="testForm" novalidate ng-submit="submit()">
