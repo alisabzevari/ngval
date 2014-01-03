@@ -4,6 +4,7 @@ ngval
 ASP.NET MVC validation for AngularJS.
 ## Getting Started
 1. Add data anotations to your entities
+
 ```c#
 public class TestEntity
 {
@@ -19,11 +20,13 @@ public class TestEntity
 }
 ```
 2. Reference ngval.js to your page
+
 ```html
 <script src="~/Scripts/ngval.js"></script>
 ```
 
 3. Add ngval module to your app module dependencies
+
 ```javascript
 var App = angular.module('App', ['ngval']);
 ```
