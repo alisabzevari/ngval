@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace NgVal.Tests.Models
 {
@@ -15,7 +11,7 @@ namespace NgVal.Tests.Models
         public string Length10Property { get; set; }
 
         [Required]
-        [StringLength(10)]
+        [RegularExpression("\\d")]
         public string MultipleValidationProperty { get; set; }
     }
 }
