@@ -74,10 +74,10 @@ namespace NgVal
                 case "length":
                     string lengthRes = "";
                     if (val.ValidationParameters.ContainsKey("min"))
-                        lengthRes += string.Format("ng-minlength=\"{0}\"", val.ValidationParameters["min"]);
+                        lengthRes += string.Format("ng-minlength=\"{0}\" ", val.ValidationParameters["min"]);
                     if (val.ValidationParameters.ContainsKey("max"))
                         lengthRes += string.Format("ng-maxlength=\"{0}\"", val.ValidationParameters["max"]);
-                    return lengthRes;
+                    return lengthRes.TrimEnd();
                 default:
                     return string.Format("{0}=\"{1}\"", val.ValidationType, Json.Encode(val.ValidationParameters));
             }
